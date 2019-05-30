@@ -29,7 +29,8 @@ export class EditAirplaneComponent implements OnInit {
       id: [],
       codigoAviao: ['', Validators.required],
       modelo: ['', Validators.required],
-      qtdPassageiros: ['', Validators.required]
+      qtdPassageiros: ['', Validators.required],
+      dataCriacao: ['', Validators.required]      
     });
     this.airplaneService.getAirplaneById(airplaneId)
       .subscribe( data => {

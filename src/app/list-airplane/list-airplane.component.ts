@@ -14,16 +14,17 @@ export class ListAirplaneComponent implements OnInit {
   constructor(private router: Router, private airplaneService: AirplaneService) { }
 
   ngOnInit() {
-    this.airplaneService.getAirplanes()
-      .subscribe( data => {
-        this.airplanes = data;
-      });
+    this.listAirplane();
   }
 
   deleteAirplane(airplane: Airplane): void {
     this.airplaneService.deleteAirplane(airplane.id)
-      .subscribe( data => {
-        this.airplanes = this.airplanes.filter(c=> c !==airplane); 
+    .subscribe(
+      data => {
+        this.listAirplane();      
+      },
+      error => {
+        this.router.navigate(['list-airplane']);
       });
   }
 
@@ -33,5 +34,12 @@ export class ListAirplaneComponent implements OnInit {
 
   addAirplane(): void {
     this.router.navigate(['add-airplane']);
+  }
+
+  listAirplane(){
+    this.airplaneService.getAirplanes()
+      .subscribe( data => {
+        this.airplanes = data;
+      }); 
   }
 }

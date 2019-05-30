@@ -4,4 +4,5 @@ export class Airplane {
     codigoaviao: string;
     modelo: string;
     qtdpassageiros: number;
+    dataCriacao: Date; 
   }
