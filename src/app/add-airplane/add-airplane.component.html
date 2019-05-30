@@ -1,0 +1,20 @@
+<div class="col-md-6">
+  <h2 class="text-center">Adicionar Airplane</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="codigoAviao">Código:</label>
+      <input formControlName="codigoAviao" placeholder="Código" name="codigoAviao" class="form-control" id="codigoAviao">
+    </div>
+    <div class="form-group">
+      <label for="modelo">Modelo:</label>
+      <input formControlName="modelo" placeholder="Modelo" name="modelo" class="form-control" id="modelo">
+    </div>
+
+    <div class="form-group">
+      <label for="qtdPassageiros">Quantidade:</label>
+      <input type="number" formControlName="qtdPassageiros" placeholder="Quantidade" name="qtdPassageiros" class="form-control" id="qtdPassageiros">
+    </div>
+
+    <button class="btn btn-success">Salvar</button>
+  </form>
+</div>

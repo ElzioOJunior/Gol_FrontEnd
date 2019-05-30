@@ -1,0 +1,23 @@
+<div class="col-md-6">
+  <h2 class="text-center"> Lista de Airplanes</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Código</th>
+      <th>Modelo</th>
+      <th>Quantidade Passageiros</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let airplane of airplanes.results">
+      <td>{{ airplane.codigoAviao }}</td>
+      <td>{{ airplane.modelo }}</td>
+      <td>{{ airplane.qtdPassageiros }}</td>
+      <td><button class="btn btn-danger btn-sm" (click)="deleteAirplane(airplane)"> Excluir</button></td>
+      <td><button class="btn btn-secondary  btn-sm" (click)="editAirplane(airplane)" > Editar</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
